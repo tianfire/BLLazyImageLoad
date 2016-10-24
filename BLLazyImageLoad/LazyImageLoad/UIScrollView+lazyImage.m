@@ -12,8 +12,6 @@
 #import <objc/runtime.h>
 #include <stdio.h>
 
-#define MAXIMGNUM 5
-
 static char dataKey;
 static char imgviewKey;
 static char urlKey;
@@ -34,19 +32,9 @@ NSArray *isDownLoadKeys;
     self.urlSELForIndexPathBlock        = urlBlock;
     self.placeHolderForIndexPathBlock   = placeholderBlock;
     
-    [[self class] setLazyKey];
-//    imgKeys = @[@"0",@"1",@"2",@"3"];
-//    isDownLoadKeys = @[@"101",@"102",@"103",@"104"];
+    imgKeys = @[@"0",@"1",@"2",@"3"];
+    isDownLoadKeys = @[@"101",@"102",@"103",@"104"];
     
-}
-
-+ (void)setLazyKey {
-    imgKeys = [NSMutableArray arrayWithCapacity:9];
-    isDownLoadKeys = [NSMutableArray arrayWithCapacity:9];
-    for (int i= 0; i < MAXIMGNUM; i++) {
-        [((NSMutableArray *)imgKeys) addObject:[NSString stringWithFormat:@"%d", i + 1]];
-        [((NSMutableArray *)isDownLoadKeys) addObject:[NSString stringWithFormat:@"%d", i + 101]];
-    }
 }
 
 - (void)setLazyImageForCell:(id)cell indexPath:(NSIndexPath *)indexPath {

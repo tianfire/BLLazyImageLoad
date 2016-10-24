@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 s.name = 'BLLazyImageLoad'
-s.version = '0.1.1'
+s.version = '0.1.2'
 s.license = 'MIT'
-s.summary = 'CableView/CollectionView images Lazy load.'
+s.summary = 'TableView / CollectionView images Lazy load.'
 s.homepage = 'https://github.com/tianfire/BLLazyImageLoad'
 s.authors = { 'tianfire' => 'libotian9999@gmail.com' }
 s.source = { :git => "https://github.com/tianfire/BLLazyImageLoad.git", :tag => s.version }

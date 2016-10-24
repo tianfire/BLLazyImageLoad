@@ -32,13 +32,12 @@
 
 - (void)setLazyDatasource {
     __weak __typeof(self)weakSelf = self;
-    
     [self.tableView setImageSourceBlocks:^NSObject *(NSIndexPath *indexPath) {
         // -- Return model of tableview datasource.(返回表视图数据源中此indexPath对应的对象)
         return weakSelf.dataSource[indexPath.row];
         
     } imgBlock:^id(NSIndexPath *indexPath) {
-        // -- Return imageView's property name of model Class.(返回imageView在数据源model类型中的属性名字)
+        // -- Return imageView's property name of model Class.(返回imageView在Cell中的属性名)
         DemoData *data = weakSelf.dataSource[indexPath.row];
         if (data.imgURLs.count < 3) {
             // -- If only One image，return "string".(单张图片返回返回字符串类型)
